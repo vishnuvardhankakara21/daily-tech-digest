@@ -5,105 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Tech Digest</title>
     <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f7f6;
+            padding: 40px 20px;
         }
+
         header {
-            border-bottom: 3px solid #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
         }
+
         h1 {
+            font-size: 2.5rem;
             margin: 0;
-            color: #2c3e50;
-            font-size: 2.5em;
+            color: #f0f6fc;
+            letter-spacing: -0.5px;
         }
+
         .date {
-            color: #7f8c8d;
-            font-weight: bold;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 0 0 12px 0;
+            line-height: 1.3;
+        }
+
+        p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
             text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
             letter-spacing: 1px;
         }
-        .news-item {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .news-item h2 {
-            margin-top: 0;
-            font-size: 1.3em;
-            color: #2980b9;
-        }
-        .news-item p {
-            margin-bottom: 0;
-            color: #555;
-        }
-        footer {
-            text-align: center;
-            font-size: 0.9em;
-            color: #95a5a6;
-            margin-top: 40px;
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 20px; }
+            .article-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Daily Tech Digest</h1>
+            <div class="date">Friday, July 17, 2026</div>
+        </header>
 
-<header>
-    <h1>Daily Tech Digest</h1>
-    <div class="date">Friday, July 17, 2026</div>
-</header>
+        <main>
+            <article class="article-card">
+                <div class="tag">Security</div>
+                <h2>Critical WordPress Core Flaw Discovered</h2>
+                <p>The "wp2shell" vulnerability allows unauthenticated attackers to execute code on default installs. Patch 7.0.2 has been released to mitigate the risk.</p>
+            </article>
 
-<div class="news-item">
-    <h2>Apple Music and Apple One Subscription Prices Increase</h2>
-    <p>Apple is raising the monthly cost of its music streaming and bundle services in the U.S. and other markets, citing increased licensing costs for content creators.</p>
-</div>
+            <article class="article-card">
+                <div class="tag">Gaming</div>
+                <h2>Bethesda Confirms Fallout 5 & Elder Scrolls Focus</h2>
+                <p>Todd Howard revealed that Fallout 5 is officially in preproduction, while confirming that The Elder Scrolls 6 remains the studio's primary developmental focus.</p>
+            </article>
 
-<div class="news-item">
-    <h2>Critical 'wp2shell' Vulnerability Found in WordPress Core</h2>
-    <p>Security researchers have identified a major pre-auth remote code execution flaw in default WordPress installs, allowing attackers to run code without needing any active plugins.</p>
-</div>
+            <article class="article-card">
+                <div class="tag">Policy</div>
+                <h2>App Stores Ordered to Purge AI 'Nudify' Apps</h2>
+                <p>San Francisco officials have ordered Apple and Google to remove dozens of apps that use AI to digitally alter photos, citing violations of state safety laws.</p>
+            </article>
 
-<div class="news-item">
-    <h2>App Stores Ordered to Purge 'Nudify' AI Applications</h2>
-    <p>San Francisco's City Attorney has officially ordered Apple and Google to remove dozens of AI apps that use deepfake technology to digitally unclothe individuals without consent.</p>
-</div>
+            <article class="article-card">
+                <div class="tag">Hardware</div>
+                <h2>iPhone 18 Pro Details Leak Early</h2>
+                <p>Rumors swirl around the upcoming iPhone 18 Pro series, suggesting twelve new features including major camera sensor upgrades and a refined titanium chassis.</p>
+            </article>
 
-<div class="news-item">
-    <h2>Samsung Galaxy Z Fold 8 Marketing Leaks Ahead of Unpacked</h2>
-    <p>Freshly leaked marketing images reveal a "short and stout" redesign for the upcoming Galaxy Z Fold 8 and Fold 8 Ultra, giving fans an early look at Samsung's next flagship foldables.</p>
-</div>
+            <article class="article-card">
+                <div class="tag">Open Source</div>
+                <h2>Developer Rewrites Linux Kernel in Rust</h2>
+                <p>In response to a challenge from Linus Torvalds, a developer has completed "linux-0.11-rs," a total reimplementation of the early Linux kernel using Rust.</p>
+            </article>
 
-<div class="news-item">
-    <h2>Linux Kernel Rewritten in Rust Following Torvalds' Challenge</h2>
-    <p>After Linus Torvalds challenged critics to fork the project, a developer has released a complete reimplementation of the classic Linux 0.11 kernel written entirely in Rust.</p>
-</div>
+            <article class="article-card">
+                <div class="tag">Services</div>
+                <h2>Apple Music & Apple One See Price Hikes</h2>
+                <p>Citing rising licensing costs, Apple has increased subscription rates for its music and bundled services in the U.S. and several international markets.</p>
+            </article>
 
-<div class="news-item">
-    <h2>Surface Laptop Review: 8GB RAM Proves Insufficient for Windows 11</h2>
-    <p>New testing of Microsoft's latest entry-level Surface Laptop shows that even first-party hardware struggles to maintain performance on Windows 11 with only 8GB of memory.</p>
-</div>
+            <article class="article-card">
+                <div class="tag">Gaming Industry</div>
+                <h2>Sony's 'Marathon' Director Departs Bungie</h2>
+                <p>Joseph Ziegler has stepped down as Game Director for the highly anticipated extraction shooter Marathon, marking a significant leadership shake-up at Sony-owned Bungie.</p>
+            </article>
 
-<div class="news-item">
-    <h2>Bethesda Confirms Fallout 5 is in Pre-Production</h2>
-    <p>Studio chief Todd Howard revealed that while The Elder Scrolls 6 remains the primary focus, Fallout 5 is officially in the works following the massive success of the TV adaptation.</p>
-</div>
-
-<div class="news-item">
-    <h2>iPhone 18 Pro Rumors Point to September Launch</h2>
-    <p>Anticipation is building for the iPhone 18 Pro and Pro Max, which are expected to launch in two months with twelve major new features across the hardware and software stack.</p>
-</div>
-
-<footer>
-    &copy; 2026 Daily Tech Digest. All rights reserved.
-</footer>
-
+            <article class="article-card">
+                <div class="tag">Laptops</div>
+                <h2>Surface Laptop Struggles with 8GB Baseline</h2>
+                <p>New reviews of Microsoft's latest entry-level Surface Laptop highlight significant performance bottlenecks when running Windows 11 on just 8GB of RAM.</p>
+            </article>
+        </main>
+    </div>
 </body>
 </html>
