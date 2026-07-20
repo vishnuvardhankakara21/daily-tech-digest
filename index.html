@@ -8,88 +8,89 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --border-color: #30363d;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent-color: #58a6ff;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
 
         header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
+            text-align: center;
         }
 
         h1 {
+            color: var(--accent);
             font-size: 2.5rem;
-            margin: 0;
-            color: #f0f6fc;
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
         }
 
         .date {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-size: 1.1rem;
-            margin-top: 8px;
-            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .article-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 32px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .article-card:hover {
             transform: translateY(-2px);
-            border-color: var(--accent-color);
+            border-color: var(--accent);
         }
 
         h2 {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            margin: 0 0 12px 0;
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin: 0 0 15px 0;
             line-height: 1.3;
         }
 
         p {
             margin: 0;
-            color: var(--text-primary);
+            color: var(--text-muted);
             font-size: 1.05rem;
         }
 
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
         }
 
         @media (max-width: 600px) {
+            body { padding: 20px 15px; }
             h1 { font-size: 2rem; }
-            .container { padding: 20px; }
+            h2 { font-size: 1.3rem; }
             .article-card { padding: 20px; }
         }
     </style>
@@ -98,58 +99,49 @@
     <div class="container">
         <header>
             <h1>Daily Tech Digest</h1>
-            <div class="date">Friday, July 17, 2026</div>
+            <div class="date">July 18, 2026</div>
         </header>
 
         <main>
-            <article class="article-card">
-                <div class="tag">Security</div>
-                <h2>Critical WordPress Core Flaw Discovered</h2>
-                <p>The "wp2shell" vulnerability allows unauthenticated attackers to execute code on default installs. Patch 7.0.2 has been released to mitigate the risk.</p>
-            </article>
+            <div class="article-card">
+                <h2>Google Rebrands NotebookLM to Gemini Notebook</h2>
+                <p>Google has officially transitioned NotebookLM into the Gemini ecosystem, adding direct Google Drive sync and support for PDF and Excel exports.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="tag">Gaming</div>
-                <h2>Bethesda Confirms Fallout 5 & Elder Scrolls Focus</h2>
-                <p>Todd Howard revealed that Fallout 5 is officially in preproduction, while confirming that The Elder Scrolls 6 remains the studio's primary developmental focus.</p>
-            </article>
+            <div class="article-card">
+                <h2>Valve Issues Warning Over Rising RAM Prices</h2>
+                <p>Steam Machine engineers predict memory costs will become increasingly extortionate over the next six months due to AI-driven hardware demand.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="tag">Policy</div>
-                <h2>App Stores Ordered to Purge AI 'Nudify' Apps</h2>
-                <p>San Francisco officials have ordered Apple and Google to remove dozens of apps that use AI to digitally alter photos, citing violations of state safety laws.</p>
-            </article>
+            <div class="article-card">
+                <h2>AI Recipe Doubles QLED Efficiency</h2>
+                <p>Researchers have leveraged AI to inversely determine optimal conditions for quantum-dot LEDs, resulting in a 40-fold boost in device lifetime.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="tag">Hardware</div>
-                <h2>iPhone 18 Pro Details Leak Early</h2>
-                <p>Rumors swirl around the upcoming iPhone 18 Pro series, suggesting twelve new features including major camera sensor upgrades and a refined titanium chassis.</p>
-            </article>
+            <div class="article-card">
+                <h2>Google Pixel 11a Leaks Suggest Tensor G6 Power</h2>
+                <p>Early reports indicate Google’s next budget-friendly device will feature the Tensor G6 chip and a more reliable MediaTek modem to improve connectivity.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="tag">Open Source</div>
-                <h2>Developer Rewrites Linux Kernel in Rust</h2>
-                <p>In response to a challenge from Linus Torvalds, a developer has completed "linux-0.11-rs," a total reimplementation of the early Linux kernel using Rust.</p>
-            </article>
+            <div class="article-card">
+                <h2>Samsung Galaxy Watch 9 Marketing Materials Surface</h2>
+                <p>A full leak of Samsung’s upcoming wearable reveals advanced health-tracking features that prioritize sensor accuracy over major design changes.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="tag">Services</div>
-                <h2>Apple Music & Apple One See Price Hikes</h2>
-                <p>Citing rising licensing costs, Apple has increased subscription rates for its music and bundled services in the U.S. and several international markets.</p>
-            </article>
+            <div class="article-card">
+                <h2>Windows 11 July Update Redefines Security</h2>
+                <p>The latest Patch Tuesday update is packed with AI-driven improvements designed to proactively identify and mitigate thousands of potential vulnerabilities.</p>
+            </div>
 
-            <article class="article-card">
-                <div class="tag">Gaming Industry</div>
-                <h2>Sony's 'Marathon' Director Departs Bungie</h2>
-                <p>Joseph Ziegler has stepped down as Game Director for the highly anticipated extraction shooter Marathon, marking a significant leadership shake-up at Sony-owned Bungie.</p>
-            </article>
-
-            <article class="article-card">
-                <div class="tag">Laptops</div>
-                <h2>Surface Laptop Struggles with 8GB Baseline</h2>
-                <p>New reviews of Microsoft's latest entry-level Surface Laptop highlight significant performance bottlenecks when running Windows 11 on just 8GB of RAM.</p>
-            </article>
+            <div class="article-card">
+                <h2>Asus ROG Strix G18 Hits Global Markets</h2>
+                <p>The 2026 edition of the gaming powerhouse arrives with a stunning 1,200-nit Mini LED display and a refined chassis for better thermal performance.</p>
+            </div>
         </main>
+
+        <footer>
+            &copy; 2026 Daily Tech Digest &bull; Curated Technology News
+        </footer>
     </div>
 </body>
 </html>
