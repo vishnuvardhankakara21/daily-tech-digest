@@ -8,139 +8,139 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
+            --border-color: #30363d;
             --text-main: #c9d1d9;
             --text-muted: #8b949e;
             --accent: #58a6ff;
-            --border: #30363d;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 0;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 2rem 1rem;
         }
 
         header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 30px;
-            margin-bottom: 50px;
             text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
         }
 
-        h1 {
+        header h1 {
             color: var(--accent);
             font-size: 2.5rem;
-            font-weight: 800;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
         }
 
         .date {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            font-size: 0.9rem;
         }
 
         .article-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .article-card:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
             border-color: var(--accent);
         }
 
-        h2 {
+        .article-card h2 {
             color: var(--accent);
-            font-size: 1.6rem;
-            margin: 0 0 15px 0;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
             line-height: 1.3;
         }
 
-        p {
+        .article-card p {
             margin: 0;
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 1.05rem;
         }
 
-        footer {
+        .footer {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 4rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
+            font-size: 0.85rem;
+            padding-bottom: 2rem;
         }
 
         @media (max-width: 600px) {
-            body { padding: 20px 15px; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.3rem; }
-            .article-card { padding: 20px; }
+            header h1 { font-size: 2rem; }
+            .article-card { padding: 1.25rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <p class="date">July 20, 2026</p>
             <h1>Daily Tech Digest</h1>
-            <div class="date">July 18, 2026</div>
         </header>
 
         <main>
-            <div class="article-card">
-                <h2>Google Rebrands NotebookLM to Gemini Notebook</h2>
-                <p>Google has officially transitioned NotebookLM into the Gemini ecosystem, adding direct Google Drive sync and support for PDF and Excel exports.</p>
-            </div>
+            <article class="article-card">
+                <h2>iOS 27 Beta Promises Massive Speed Boosts</h2>
+                <p>Apple's latest mobile OS update reportedly optimizes over 30 system areas, significantly improving performance in Safari, Photos, and the Camera app for modern iPhones.</p>
+            </article>
 
-            <div class="article-card">
-                <h2>Valve Issues Warning Over Rising RAM Prices</h2>
-                <p>Steam Machine engineers predict memory costs will become increasingly extortionate over the next six months due to AI-driven hardware demand.</p>
-            </div>
+            <article class="article-card">
+                <h2>Galaxy Z Fold 8 Design Leaks via BTS Member</h2>
+                <p>A fresh real-world look at Samsung’s next-gen foldable reveals a much wider form factor, addressing long-standing user requests for a more traditional outer screen aspect ratio.</p>
+            </article>
 
-            <div class="article-card">
-                <h2>AI Recipe Doubles QLED Efficiency</h2>
-                <p>Researchers have leveraged AI to inversely determine optimal conditions for quantum-dot LEDs, resulting in a 40-fold boost in device lifetime.</p>
-            </div>
+            <article class="article-card">
+                <h2>Apple Testing AI Summaries at Genius Bars</h2>
+                <p>A new pilot program called "Live Notes" allows Apple technicians to record and AI-summarize support conversations, aimed at streamlining repair logs and follow-up efficiency.</p>
+            </article>
 
-            <div class="article-card">
-                <h2>Google Pixel 11a Leaks Suggest Tensor G6 Power</h2>
-                <p>Early reports indicate Google’s next budget-friendly device will feature the Tensor G6 chip and a more reliable MediaTek modem to improve connectivity.</p>
-            </div>
+            <article class="article-card">
+                <h2>Xbox Pivots Strategy on Exclusive Titles</h2>
+                <p>Executives confirm more exclusives are on the way, but are urging the community to look beyond "single-player only" metrics as the brand expands its multiplayer and live-service footprint.</p>
+            </article>
 
-            <div class="article-card">
-                <h2>Samsung Galaxy Watch 9 Marketing Materials Surface</h2>
-                <p>A full leak of Samsung’s upcoming wearable reveals advanced health-tracking features that prioritize sensor accuracy over major design changes.</p>
-            </div>
+            <article class="article-card">
+                <h2>Android Auto Finally Adds Live Speedometer</h2>
+                <p>After years of user requests, Google Maps on Android Auto is rolling out a native speedometer feature, bringing it in line with the long-standing functionality of the mobile app.</p>
+            </article>
 
-            <div class="article-card">
-                <h2>Windows 11 July Update Redefines Security</h2>
-                <p>The latest Patch Tuesday update is packed with AI-driven improvements designed to proactively identify and mitigate thousands of potential vulnerabilities.</p>
-            </div>
+            <article class="article-card">
+                <h2>Kodak's $35 Film Camera Targets Gen Z</h2>
+                <p>The new Kodak EC35 aims to make the film photography renaissance accessible to everyone with a "dirt-cheap" point-and-shoot design that undercuts the rising cost of vintage gear.</p>
+            </article>
 
-            <div class="article-card">
-                <h2>Asus ROG Strix G18 Hits Global Markets</h2>
-                <p>The 2026 edition of the gaming powerhouse arrives with a stunning 1,200-nit Mini LED display and a refined chassis for better thermal performance.</p>
-            </div>
+            <article class="article-card">
+                <h2>Privacy Check: How to Hide Your Home from Google</h2>
+                <p>New reports highlight the simple privacy request process that allows homeowners to permanently blur or remove their properties from Google Street View to prevent unwanted prying.</p>
+            </article>
         </main>
 
-        <footer>
-            &copy; 2026 Daily Tech Digest &bull; Curated Technology News
+        <footer class="footer">
+            &copy; 2026 Tech Digest Media. Curated daily for the modern enthusiast.
         </footer>
     </div>
 </body>
