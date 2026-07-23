@@ -8,16 +8,16 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
             --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --accent: #58a6ff;
+            --secondary-text: #8b949e;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -26,121 +26,134 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 40px 20px;
         }
 
         header {
-            text-align: center;
-            margin-bottom: 3rem;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2rem;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
         }
 
-        header h1 {
-            color: var(--accent);
+        h1 {
+            color: var(--accent-color);
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         .date {
-            color: var(--text-muted);
-            font-weight: 500;
+            color: var(--secondary-text);
+            font-size: 1rem;
+            margin-top: 8px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-size: 0.9rem;
         }
 
-        .article-card {
-            background-color: var(--card-bg);
+        .digest-item {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
+            padding: 24px;
+            margin-bottom: 24px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .article-card:hover {
+        .digest-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-            border-color: var(--accent);
+            border-color: var(--accent-color);
         }
 
-        .article-card h2 {
-            color: var(--accent);
+        h2 {
+            color: var(--accent-color);
             font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 0.75rem;
+            margin: 0 0 12px 0;
             line-height: 1.3;
         }
 
-        .article-card p {
+        p {
             margin: 0;
-            color: var(--text-main);
+            color: var(--text-color);
             font-size: 1.05rem;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-muted);
+        .source {
+            display: inline-block;
+            margin-top: 16px;
             font-size: 0.85rem;
-            padding-bottom: 2rem;
+            color: var(--secondary-text);
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .article-card { padding: 1.25rem; }
+            h1 { font-size: 2rem; }
+            .container { padding: 20px 15px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <p class="date">July 20, 2026</p>
             <h1>Daily Tech Digest</h1>
+            <div class="date">July 21, 2026</div>
         </header>
 
         <main>
-            <article class="article-card">
-                <h2>iOS 27 Beta Promises Massive Speed Boosts</h2>
-                <p>Apple's latest mobile OS update reportedly optimizes over 30 system areas, significantly improving performance in Safari, Photos, and the Camera app for modern iPhones.</p>
+            <article class="digest-item">
+                <h2>Google Teases Gemini 4 and Drops Gemini Flash 3.6</h2>
+                <p>Google has accelerated its AI roadmap, releasing a significant update to Gemini Flash while officially teasing the next generation of its model, Gemini 4.</p>
+                <span class="source">Droid Life</span>
             </article>
 
-            <article class="article-card">
-                <h2>Galaxy Z Fold 8 Design Leaks via BTS Member</h2>
-                <p>A fresh real-world look at Samsung’s next-gen foldable reveals a much wider form factor, addressing long-standing user requests for a more traditional outer screen aspect ratio.</p>
+            <article class="digest-item">
+                <h2>Apple Music and One Subscription Prices Jump</h2>
+                <p>Citing rising licensing costs, Apple has increased monthly rates for Music and Apple One bundles, with family plans seeing the steepest hikes.</p>
+                <span class="source">Fox Business</span>
             </article>
 
-            <article class="article-card">
-                <h2>Apple Testing AI Summaries at Genius Bars</h2>
-                <p>A new pilot program called "Live Notes" allows Apple technicians to record and AI-summarize support conversations, aimed at streamlining repair logs and follow-up efficiency.</p>
+            <article class="digest-item">
+                <h2>Samsung Galaxy Z Fold 8 Design Leaked by BTS Member</h2>
+                <p>A wider, more refined form factor for the upcoming Galaxy Z Fold 8 was inadvertently revealed in tour footage shared by BTS star J-Hope.</p>
+                <span class="source">Mashable</span>
             </article>
 
-            <article class="article-card">
-                <h2>Xbox Pivots Strategy on Exclusive Titles</h2>
-                <p>Executives confirm more exclusives are on the way, but are urging the community to look beyond "single-player only" metrics as the brand expands its multiplayer and live-service footprint.</p>
+            <article class="digest-item">
+                <h2>Tesla Summer Update Brings Grok Integration</h2>
+                <p>Tesla's 2026 Summer Update adds native Grok voice commands for car controls, improved navigation, and a new scoring system for Caraoke enthusiasts.</p>
+                <span class="source">Electrek</span>
             </article>
 
-            <article class="article-card">
-                <h2>Android Auto Finally Adds Live Speedometer</h2>
-                <p>After years of user requests, Google Maps on Android Auto is rolling out a native speedometer feature, bringing it in line with the long-standing functionality of the mobile app.</p>
+            <article class="digest-item">
+                <h2>Apple Rumored to Launch 'Upgrade' Lease Program</h2>
+                <p>The tech giant is reportedly preparing a lease-to-own model for iPhones, Macs, and iPads, aiming to make high-end hardware more accessible via monthly payments.</p>
+                <span class="source">The Verge</span>
             </article>
 
-            <article class="article-card">
-                <h2>Kodak's $35 Film Camera Targets Gen Z</h2>
-                <p>The new Kodak EC35 aims to make the film photography renaissance accessible to everyone with a "dirt-cheap" point-and-shoot design that undercuts the rising cost of vintage gear.</p>
+            <article class="digest-item">
+                <h2>Critical Bluetooth Vulnerability Affects Millions of Cars</h2>
+                <p>Security researchers discovered a flaw in dealer-installed alarms that allows hackers to unlock vehicles and kill engines remotely via Bluetooth.</p>
+                <span class="source">The Drive</span>
             </article>
 
-            <article class="article-card">
-                <h2>Privacy Check: How to Hide Your Home from Google</h2>
-                <p>New reports highlight the simple privacy request process that allows homeowners to permanently blur or remove their properties from Google Street View to prevent unwanted prying.</p>
+            <article class="digest-item">
+                <h2>XBOX Game Pass Arrives on Meta Horizon+</h2>
+                <p>A new partnership between Microsoft and Meta brings a starter edition of XBOX Game Pass to Horizon+ subscribers, expanding cloud gaming's reach.</p>
+                <span class="source">XBOX Wire</span>
+            </article>
+
+            <article class="digest-item">
+                <h2>Apple Patches 'Hide My Email' Privacy Flaw</h2>
+                <p>Following investigative reports, Apple has fixed a vulnerability that inadvertently exposed users' real email addresses through the privacy-focused feature.</p>
+                <span class="source">404 Media</span>
             </article>
         </main>
 
-        <footer class="footer">
-            &copy; 2026 Tech Digest Media. Curated daily for the modern enthusiast.
+        <footer style="text-align: center; color: var(--secondary-text); margin-top: 40px; font-size: 0.9rem;">
+            &copy; 2026 Tech Digest Media. All rights reserved.
         </footer>
     </div>
 </body>
