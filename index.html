@@ -8,90 +8,103 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --border-color: #30363d;
-            --secondary-text: #8b949e;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            width: 100%;
+            padding: 2rem 1.5rem;
         }
 
         header {
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-            padding-bottom: 20px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
         h1 {
-            color: var(--accent-color);
+            color: var(--accent);
             font-size: 2.5rem;
             margin: 0;
-            font-weight: 800;
             letter-spacing: -0.02em;
         }
 
         .date {
-            color: var(--secondary-text);
-            font-size: 1rem;
-            margin-top: 8px;
+            color: var(--text-muted);
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
 
-        .digest-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+        .news-card {
+            background-color: var(--card-bg);
+            border: 1px solid #30363d;
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow);
         }
 
-        .digest-item:hover {
+        .news-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-            border-color: var(--accent-color);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+            border-color: #484f58;
         }
 
-        h2 {
-            color: var(--accent-color);
+        .news-card h2 {
+            color: var(--accent);
             font-size: 1.4rem;
-            margin: 0 0 12px 0;
+            margin: 0 0 0.75rem 0;
             line-height: 1.3;
         }
 
-        p {
+        .news-card p {
             margin: 0;
-            color: var(--text-color);
+            color: var(--text-main);
             font-size: 1.05rem;
         }
 
-        .source {
+        .tag {
             display: inline-block;
-            margin-top: 16px;
-            font-size: 0.85rem;
-            color: var(--secondary-text);
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 600;
+            margin-bottom: 1rem;
             text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
-            .container { padding: 20px 15px; }
+            .news-card { padding: 1.25rem; }
         }
     </style>
 </head>
@@ -99,61 +112,55 @@
     <div class="container">
         <header>
             <h1>Daily Tech Digest</h1>
-            <div class="date">July 21, 2026</div>
+            <div class="date">July 22, 2026</div>
         </header>
 
         <main>
-            <article class="digest-item">
-                <h2>Google Teases Gemini 4 and Drops Gemini Flash 3.6</h2>
-                <p>Google has accelerated its AI roadmap, releasing a significant update to Gemini Flash while officially teasing the next generation of its model, Gemini 4.</p>
-                <span class="source">Droid Life</span>
+            <article class="news-card">
+                <span class="tag">Mobile Tech</span>
+                <h2>Samsung Galaxy Z Fold 8 Reimagined for Entertainment</h2>
+                <p>The upcoming book-style foldable shifts focus from pure productivity to a wider, media-first design optimized for social media scrolling and cinematic video playback.</p>
             </article>
 
-            <article class="digest-item">
-                <h2>Apple Music and One Subscription Prices Jump</h2>
-                <p>Citing rising licensing costs, Apple has increased monthly rates for Music and Apple One bundles, with family plans seeing the steepest hikes.</p>
-                <span class="source">Fox Business</span>
+            <article class="news-card">
+                <span class="tag">Gaming</span>
+                <h2>Xbox Original Compatibility Hits Windows PCs</h2>
+                <p>Microsoft has officially launched native backward compatibility for original Xbox titles on PC, allowing classic games to run efficiently on a wide range of hardware.</p>
             </article>
 
-            <article class="digest-item">
-                <h2>Samsung Galaxy Z Fold 8 Design Leaked by BTS Member</h2>
-                <p>A wider, more refined form factor for the upcoming Galaxy Z Fold 8 was inadvertently revealed in tour footage shared by BTS star J-Hope.</p>
-                <span class="source">Mashable</span>
+            <article class="news-card">
+                <span class="tag">Leaks</span>
+                <h2>Pixel 11 Series Fully Exposed in New Gallery</h2>
+                <p>Extensive new leaks have revealed the Pixel 11 Pro from every angle, showcasing a refined industrial design and a bold new direction for Google's signature camera housing.</p>
             </article>
 
-            <article class="digest-item">
-                <h2>Tesla Summer Update Brings Grok Integration</h2>
-                <p>Tesla's 2026 Summer Update adds native Grok voice commands for car controls, improved navigation, and a new scoring system for Caraoke enthusiasts.</p>
-                <span class="source">Electrek</span>
+            <article class="news-card">
+                <span class="tag">Wearables</span>
+                <h2>Samsung Previews "Galaxy Glasses" at Unpacked</h2>
+                <p>Stealing the show at Unpacked, Samsung confirmed its highly anticipated smart glasses are nearing completion, with a commercial launch slated for later this fall.</p>
             </article>
 
-            <article class="digest-item">
-                <h2>Apple Rumored to Launch 'Upgrade' Lease Program</h2>
-                <p>The tech giant is reportedly preparing a lease-to-own model for iPhones, Macs, and iPads, aiming to make high-end hardware more accessible via monthly payments.</p>
-                <span class="source">The Verge</span>
+            <article class="news-card">
+                <span class="tag">Computing</span>
+                <h2>Apple MacBook Neo to Feature A19 Pro & RAM Boost</h2>
+                <p>Internal reports suggest a new "Neo" tier for the MacBook lineup, designed to bridge the gap between Air and Pro with high-memory configurations and enhanced silicon.</p>
             </article>
 
-            <article class="digest-item">
-                <h2>Critical Bluetooth Vulnerability Affects Millions of Cars</h2>
-                <p>Security researchers discovered a flaw in dealer-installed alarms that allows hackers to unlock vehicles and kill engines remotely via Bluetooth.</p>
-                <span class="source">The Drive</span>
+            <article class="news-card">
+                <span class="tag">Industry</span>
+                <h2>Sony's Shift Away from Physical Discs Sparks Concern</h2>
+                <p>Analysts warn that Sony's plan to phase out PlayStation disc manufacturing by 2028 could effectively dismantle the $7.2 billion global used game market.</p>
             </article>
 
-            <article class="digest-item">
-                <h2>XBOX Game Pass Arrives on Meta Horizon+</h2>
-                <p>A new partnership between Microsoft and Meta brings a starter edition of XBOX Game Pass to Horizon+ subscribers, expanding cloud gaming's reach.</p>
-                <span class="source">XBOX Wire</span>
-            </article>
-
-            <article class="digest-item">
-                <h2>Apple Patches 'Hide My Email' Privacy Flaw</h2>
-                <p>Following investigative reports, Apple has fixed a vulnerability that inadvertently exposed users' real email addresses through the privacy-focused feature.</p>
-                <span class="source">404 Media</span>
+            <article class="news-card">
+                <span class="tag">Cybersecurity</span>
+                <h2>Critical SharePoint Exploit Sees Active Use</h2>
+                <p>Security researchers are urging immediate patches for a critical SharePoint RCE vulnerability that is currently being exploited in the wild to steal sensitive machine keys.</p>
             </article>
         </main>
 
-        <footer style="text-align: center; color: var(--secondary-text); margin-top: 40px; font-size: 0.9rem;">
-            &copy; 2026 Tech Digest Media. All rights reserved.
+        <footer>
+            &copy; 2026 Tech News Editor. All rights reserved.
         </footer>
     </div>
 </body>
