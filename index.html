@@ -9,15 +9,15 @@
             --bg-color: #0d1117;
             --card-bg: #161b22;
             --text-main: #c9d1d9;
-            --text-bright: #f0f6fc;
+            --text-muted: #8b949e;
             --accent: #58a6ff;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            --border: #30363d;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -30,32 +30,34 @@
         }
 
         header {
-            text-align: center;
-            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         h1 {
-            color: var(--text-bright);
+            color: var(--accent);
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         .date {
-            color: var(--accent);
-            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            margin-top: 5px;
         }
 
         .article-card {
-            background-color: var(--card-bg);
-            border: 1px solid #30363d;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
@@ -64,25 +66,25 @@
             border-color: var(--accent);
         }
 
-        .article-card h2 {
-            margin-top: 0;
+        h2 {
             color: var(--accent);
             font-size: 1.4rem;
+            margin: 0 0 10px 0;
             line-height: 1.3;
         }
 
-        .article-card p {
-            margin-bottom: 0;
-            font-size: 1.05rem;
+        p {
+            margin: 0;
             color: var(--text-main);
+            font-size: 1.05rem;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 60px;
+        .source {
+            display: inline-block;
+            margin-top: 12px;
             font-size: 0.85rem;
-            color: #8b949e;
-            padding-bottom: 40px;
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
         @media (max-width: 600px) {
@@ -92,54 +94,65 @@
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Daily Tech Digest</h1>
+            <div class="date">July 26, 2026</div>
+        </header>
 
-<div class="container">
-    <header>
-        <span class="date">July 25, 2026</span>
-        <h1>Daily Tech Digest</h1>
-    </header>
+        <main>
+            <article class="article-card">
+                <h2>Apple Watch Series 12 & Ultra 4 Details Emerge</h2>
+                <p>Late-stage testing reveals a significant, long-awaited chip upgrade is coming to Apple’s next-generation wearables this fall.</p>
+                <span class="source">9TO5MAC</span>
+            </article>
 
-    <main>
-        <article class="article-card">
-            <h2>ChatGPT Opens New Space for Medical Records</h2>
-            <p>OpenAI has launched a dedicated "Health in ChatGPT" space, allowing users to upload medical records for AI analysis—sparking a fresh debate on patient privacy and diagnostic accuracy.</p>
-        </article>
+            <article class="article-card">
+                <h2>Miyamoto: Hardware Specs No Longer Drive Interest</h2>
+                <p>Nintendo’s legendary creator suggests that cutting-edge graphics have taken a backseat to gameplay and unique player experiences.</p>
+                <span class="source">KOTAKU</span>
+            </article>
 
-        <article class="article-card">
-            <h2>Google Signals Pixel 11 Price Hike</h2>
-            <p>Rising production costs and the demand for increased RAM to power on-device AI mean the upcoming Pixel 11 will likely see a significant jump in retail pricing.</p>
-        </article>
+            <article class="article-card">
+                <h2>Apple Smart Glasses to Prioritize Privacy</h2>
+                <p>Expected to debut at WWDC next June, Apple’s upcoming eyewear aims to set itself apart by focusing on local data processing and user security.</p>
+                <span class="source">THE VERGE</span>
+            </article>
 
-        <article class="article-card">
-            <h2>Sony Brings Wearable Air Conditioning to the US</h2>
-            <p>The Reon Pocket Pro Plus has officially arrived in the States, offering a compact, neck-worn cooling solution designed to help tech enthusiasts survive record summer heatwaves.</p>
-        </article>
+            <article class="article-card">
+                <h2>PlayStation Fans Organize "Blackout" Protest</h2>
+                <p>Loyal users are planning a week-long console blackout in August to protest Sony's controversial shift away from physical media support.</p>
+                <span class="source">PUSH SQUARE</span>
+            </article>
 
-        <article class="article-card">
-            <h2>Nintendo Switch 2 Power Displayed in 'Splatoon Raiders'</h2>
-            <p>Critics say the visual fidelity and performance of new titles like Splatoon Raiders finally justify the hardware jump, showcasing what Nintendo's next-gen silicon is truly capable of.</p>
-        </article>
+            <article class="article-card">
+                <h2>The Post-Smartphone Era: AI Wearables Gain Ground</h2>
+                <p>New devices that see, listen, and record are challenging the smartphone's dominance, though privacy concerns remain a major cultural hurdle.</p>
+                <span class="source">CNN TECH</span>
+            </article>
 
-        <article class="article-card">
-            <h2>iPhone 18 Expected to Shift Traditional Launch Window</h2>
-            <p>Reports suggest Apple may break its decade-long September release streak by staggering the iPhone 18 lineup, focusing on Pro models first while delaying standard versions.</p>
-        </article>
+            <article class="article-card">
+                <h2>Linux 7.3 to Feature Massive "KVM Chainsaw" Cleanup</h2>
+                <p>A major architectural overhaul is coming to the Linux kernel to streamline complex memory management structures for better performance.</p>
+                <span class="source">PHORONIX</span>
+            </article>
 
-        <article class="article-card">
-            <h2>LG Faces Backlash Over "Invasive" Smart TV Ads</h2>
-            <p>Users and industry partners have voiced frustration after LG began rolling out more aggressive advertising across its smart TVs and high-end gaming monitors.</p>
-        </article>
+            <article class="article-card">
+                <h2>New "Apple Upgrade" Program Set for Launch</h2>
+                <p>Apple is reportedly replacing its existing iPhone Upgrade Program with a more flexible, comprehensive US-wide service starting this Tuesday.</p>
+                <span class="source">MACRUMORS</span>
+            </article>
 
-        <article class="article-card">
-            <h2>Librarians Lead 'Avoiding AI' Movement</h2>
-            <p>Public libraries are seeing viral demand for workshops teaching users how to bypass AI-generated results in search engines and opt out of Big Tech's data-scraping practices.</p>
-        </article>
-    </main>
+            <article class="article-card">
+                <h2>Self-Hosted Immich Challenges Google Photos</h2>
+                <p>As cloud storage costs climb, many tech enthusiasts are switching to Immich, a robust open-source alternative for managing personal photo libraries.</p>
+                <span class="source">ANDROID POLICE</span>
+            </article>
+        </main>
 
-    <footer>
-        &copy; 2026 Daily Tech Digest. Curated for the modern web.
-    </footer>
-</div>
-
+        <footer style="text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 0.9rem;">
+            &copy; 2026 Tech Digest Media. All rights reserved.
+        </footer>
+    </div>
 </body>
 </html>
