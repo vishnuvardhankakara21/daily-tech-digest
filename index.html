@@ -17,48 +17,48 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            width: 100%;
         }
 
         header {
+            text-align: center;
+            margin-bottom: 50px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 20px;
-            margin-bottom: 40px;
         }
 
         h1 {
             color: var(--accent);
             font-size: 2.5rem;
             margin: 0;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+            letter-spacing: -1px;
         }
 
         .date {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 5px;
+            letter-spacing: 2px;
         }
 
         .article-card {
-            background: var(--card-bg);
+            background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 24px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease;
         }
 
         .article-card:hover {
@@ -68,28 +68,27 @@
 
         h2 {
             color: var(--accent);
-            font-size: 1.4rem;
             margin: 0 0 10px 0;
+            font-size: 1.4rem;
             line-height: 1.3;
         }
 
         p {
             margin: 0;
             color: var(--text-main);
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
-        .source {
-            display: inline-block;
-            margin-top: 12px;
-            font-size: 0.85rem;
+        footer {
+            text-align: center;
+            margin-top: 40px;
             color: var(--text-muted);
-            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
-            .container { padding: 20px 15px; }
+            .article-card { padding: 18px; }
         }
     </style>
 </head>
@@ -97,61 +96,43 @@
     <div class="container">
         <header>
             <h1>Daily Tech Digest</h1>
-            <div class="date">July 26, 2026</div>
+            <div class="date">July 27, 2026</div>
         </header>
 
         <main>
-            <article class="article-card">
-                <h2>Apple Watch Series 12 & Ultra 4 Details Emerge</h2>
-                <p>Late-stage testing reveals a significant, long-awaited chip upgrade is coming to Apple’s next-generation wearables this fall.</p>
-                <span class="source">9TO5MAC</span>
-            </article>
+            <div class="article-card">
+                <h2>Microsoft Debuts GPT-5.4 Powered Cybersecurity Model</h2>
+                <p>A new AI model designed to spot vulnerabilities has been unveiled, reportedly outperforming Anthropic's latest offerings in security benchmarks.</p>
+            </div>
 
-            <article class="article-card">
-                <h2>Miyamoto: Hardware Specs No Longer Drive Interest</h2>
-                <p>Nintendo’s legendary creator suggests that cutting-edge graphics have taken a backseat to gameplay and unique player experiences.</p>
-                <span class="source">KOTAKU</span>
-            </article>
+            <div class="article-card">
+                <h2>Private Claude AI Chats Leaked in Search Results</h2>
+                <p>A major indexing oversight has led to private conversations with Anthropic's Claude being exposed across Google and Bing search engines.</p>
+            </div>
 
-            <article class="article-card">
-                <h2>Apple Smart Glasses to Prioritize Privacy</h2>
-                <p>Expected to debut at WWDC next June, Apple’s upcoming eyewear aims to set itself apart by focusing on local data processing and user security.</p>
-                <span class="source">THE VERGE</span>
-            </article>
+            <div class="article-card">
+                <h2>Samsung Teases "Reasonably Priced" Android XR Glasses</h2>
+                <p>The upcoming wearable promises deep integration with Galaxy phones and watches, marking a major push into mainstream augmented reality.</p>
+            </div>
 
-            <article class="article-card">
-                <h2>PlayStation Fans Organize "Blackout" Protest</h2>
-                <p>Loyal users are planning a week-long console blackout in August to protest Sony's controversial shift away from physical media support.</p>
-                <span class="source">PUSH SQUARE</span>
-            </article>
+            <div class="article-card">
+                <h2>Apple Releases iOS 26.6 Ahead of Major Fall Refresh</h2>
+                <p>The latest maintenance update focuses on stability and paves the architectural way for the upcoming iOS 27 release cycle.</p>
+            </div>
 
-            <article class="article-card">
-                <h2>The Post-Smartphone Era: AI Wearables Gain Ground</h2>
-                <p>New devices that see, listen, and record are challenging the smartphone's dominance, though privacy concerns remain a major cultural hurdle.</p>
-                <span class="source">CNN TECH</span>
-            </article>
+            <div class="article-card">
+                <h2>Samsung Galaxy S27 Ultra Battery Specs Surface</h2>
+                <p>Leaked data suggests the next flagship will adopt silicon-carbon anodes, promising higher energy density and improved longevity.</p>
+            </div>
 
-            <article class="article-card">
-                <h2>Linux 7.3 to Feature Massive "KVM Chainsaw" Cleanup</h2>
-                <p>A major architectural overhaul is coming to the Linux kernel to streamline complex memory management structures for better performance.</p>
-                <span class="source">PHORONIX</span>
-            </article>
-
-            <article class="article-card">
-                <h2>New "Apple Upgrade" Program Set for Launch</h2>
-                <p>Apple is reportedly replacing its existing iPhone Upgrade Program with a more flexible, comprehensive US-wide service starting this Tuesday.</p>
-                <span class="source">MACRUMORS</span>
-            </article>
-
-            <article class="article-card">
-                <h2>Self-Hosted Immich Challenges Google Photos</h2>
-                <p>As cloud storage costs climb, many tech enthusiasts are switching to Immich, a robust open-source alternative for managing personal photo libraries.</p>
-                <span class="source">ANDROID POLICE</span>
-            </article>
+            <div class="article-card">
+                <h2>Xbox Services Fully Restored After Major Outage</h2>
+                <p>Microsoft has confirmed all online gaming services are back online following a significant multi-hour disruption that affected digital libraries.</p>
+            </div>
         </main>
 
-        <footer style="text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 0.9rem;">
-            &copy; 2026 Tech Digest Media. All rights reserved.
+        <footer>
+            &copy; 2026 Daily Tech Digest. Curated for the modern innovator.
         </footer>
     </div>
 </body>
