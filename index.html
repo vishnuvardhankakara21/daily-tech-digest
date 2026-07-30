@@ -14,81 +14,77 @@
             --border: #30363d;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
+            padding: 2rem 1rem;
         }
 
         .container {
             max-width: 800px;
-            width: 100%;
+            margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
+            margin-bottom: 3rem;
         }
 
         h1 {
-            color: var(--accent);
             font-size: 2.5rem;
-            margin: 0;
-            letter-spacing: -1px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         .date {
             color: var(--text-muted);
             font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 0.1em;
         }
 
         .article-card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
         .article-card:hover {
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
             border-color: var(--accent);
         }
 
         h2 {
             color: var(--accent);
-            margin: 0 0 10px 0;
             font-size: 1.4rem;
+            margin-bottom: 0.75rem;
             line-height: 1.3;
         }
 
         p {
-            margin: 0;
             color: var(--text-main);
             font-size: 1rem;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .article-card { padding: 18px; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.2rem; }
+            body { padding: 1rem; }
         }
     </style>
 </head>
@@ -96,44 +92,45 @@
     <div class="container">
         <header>
             <h1>Daily Tech Digest</h1>
-            <div class="date">July 27, 2026</div>
+            <p class="date">July 28, 2026</p>
         </header>
 
         <main>
             <div class="article-card">
-                <h2>Microsoft Debuts GPT-5.4 Powered Cybersecurity Model</h2>
-                <p>A new AI model designed to spot vulnerabilities has been unveiled, reportedly outperforming Anthropic's latest offerings in security benchmarks.</p>
+                <h2>Samsung Unveils Galaxy Z Fold8 with Agentic AI</h2>
+                <p>Samsung’s eighth-generation foldables have officially arrived, featuring advanced "agentic AI" designed to proactively assist users by understanding context and intent.</p>
             </div>
 
             <div class="article-card">
-                <h2>Private Claude AI Chats Leaked in Search Results</h2>
-                <p>A major indexing oversight has led to private conversations with Anthropic's Claude being exposed across Google and Bing search engines.</p>
+                <h2>Apple and Klarna Launch Device Leasing Program</h2>
+                <p>A new "Apple Upgrade" partnership allows U.S. customers to lease iPhones, Macs, and Watches with the option to return or upgrade at the end of the term.</p>
             </div>
 
             <div class="article-card">
-                <h2>Samsung Teases "Reasonably Priced" Android XR Glasses</h2>
-                <p>The upcoming wearable promises deep integration with Galaxy phones and watches, marking a major push into mainstream augmented reality.</p>
+                <h2>Tesla Summer Update Adds Native Video Conferencing</h2>
+                <p>The 2026.26 software update enables Google Meet, Microsoft Teams, and Discord directly via the car's interior cabin camera and microphone.</p>
             </div>
 
             <div class="article-card">
-                <h2>Apple Releases iOS 26.6 Ahead of Major Fall Refresh</h2>
-                <p>The latest maintenance update focuses on stability and paves the architectural way for the upcoming iOS 27 release cycle.</p>
+                <h2>Apple Smart Home Hub Expected This October</h2>
+                <p>New reports suggest a dedicated smart home command center featuring "Siri AI" and a dome-shaped base will launch as early as late autumn.</p>
             </div>
 
             <div class="article-card">
-                <h2>Samsung Galaxy S27 Ultra Battery Specs Surface</h2>
-                <p>Leaked data suggests the next flagship will adopt silicon-carbon anodes, promising higher energy density and improved longevity.</p>
+                <h2>Framework Laptop 13 Pro Reclaims Repairability Crown</h2>
+                <p>The successor to the original modular laptop doubles down on internal upgrades while maintaining the gold standard for user-serviceable hardware.</p>
             </div>
 
             <div class="article-card">
-                <h2>Xbox Services Fully Restored After Major Outage</h2>
-                <p>Microsoft has confirmed all online gaming services are back online following a significant multi-hour disruption that affected digital libraries.</p>
+                <h2>Nexus Mods Aims to Become the "Spotify of Modding"</h2>
+                <p>The platform's new leadership is pushing for a streamlined interface to make installing complex game mods as simple as clicking a play button.</p>
+            </div>
+
+            <div class="article-card">
+                <h2>Halo: Campaign Evolved Unreal Engine 5 Remake Analyzed</h2>
+                <p>Technical experts at Digital Foundry praise the visual fidelity and scaling of the new classic remake, from the PS5 Pro down to the Xbox Series S.</p>
             </div>
         </main>
-
-        <footer>
-            &copy; 2026 Daily Tech Digest. Curated for the modern innovator.
-        </footer>
     </div>
 </body>
 </html>
