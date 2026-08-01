@@ -8,89 +8,101 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
             --accent: #58a6ff;
             --border: #30363d;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            width: 90%;
+            padding: 40px 0;
         }
 
         header {
+            text-align: center;
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
         }
 
-        h1 {
-            color: var(--accent);
+        header h1 {
             font-size: 2.5rem;
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
 
         .date {
-            color: var(--text-secondary);
-            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 8px;
-            display: block;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
         }
 
-        .news-card {
-            background: var(--card-bg);
+        .article-card {
+            background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .news-card:hover {
+        .article-card:hover {
             transform: translateY(-2px);
-            border-color: var(--accent);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
 
-        h2 {
+        .headline {
             color: var(--accent);
             font-size: 1.4rem;
-            margin: 0 0 12px 0;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 12px;
             line-height: 1.3;
+            text-decoration: none;
+            display: block;
         }
 
-        p {
-            margin: 0;
-            color: var(--text-secondary);
+        .summary {
             font-size: 1.05rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .source {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
         footer {
-            text-align: center;
-            padding: 40px 0;
-            color: var(--text-secondary);
+            margin-top: 40px;
+            padding-bottom: 60px;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid var(--border);
+            text-align: center;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 20px; }
+            header h1 { font-size: 1.8rem; }
+            .headline { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -98,52 +110,54 @@
 
 <div class="container">
     <header>
+        <div class="date">Friday, July 31, 2026</div>
         <h1>Daily Tech Digest</h1>
-        <span class="date">Wednesday, July 29, 2026</span>
     </header>
 
-    <article class="news-card">
-        <h2>Xbox Revenue Dips as Microsoft Cloud Surges</h2>
-        <p>Microsoft's latest earnings show a 10% decline in Xbox revenue, contrasting with a massive $59 billion surge in its cloud and AI business sectors.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">Nintendo Adds 'Super Mario Sunshine' to Switch 2 Library</div>
+        <p class="summary">The GameCube classic is officially joining the 'Nintendo Classics' service on August 13th, further expanding the backward compatibility options for the next-gen console.</p>
+        <div class="source">Nintendo Life</div>
+    </div>
 
-    <article class="news-card">
-        <h2>OpenAI Developing 'Family of Devices'</h2>
-        <p>OpenAI president Greg Brockman confirms the company is moving into hardware, aiming to create dedicated devices designed for interacting with AI chatbots via voice.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">Tim Cook Labels Hybrid AI as Apple’s 'Competitive Weapon'</div>
+        <p class="summary">In his final earnings call as CEO, Cook detailed a strategy to monetize Apple Intelligence through iCloud, positioning proprietary hardware-software integration as a major market advantage.</p>
+        <div class="source">CNBC</div>
+    </div>
 
-    <article class="news-card">
-        <h2>Apple Debuts Device Leasing Program</h2>
-        <p>Apple has launched a new subscription-based leasing model for iPhones and Macs, offering a low monthly entry point for the latest hardware ecosystems.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">Google Credits AI for 200% Increase in Chrome Bug Fixes</div>
+        <p class="summary">Internal LLM tools have allowed Google to patch more security vulnerabilities in the last month than in the previous two years combined, marking a shift in automated cybersecurity.</p>
+        <div class="source">TechCrunch</div>
+    </div>
 
-    <article class="news-card">
-        <h2>Gemini for macOS Gains Voice Control</h2>
-        <p>Google is rolling out advanced voice features for Gemini on Mac, allowing users to interact naturally with AI across any desktop window or application.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">Xbox Sets One-Year Deadline for Growth Recovery</div>
+        <p class="summary">CEO Asha Sharma issued a staff memo targeting June 2027 as the deadline to return the gaming division to consistent revenue and player growth following a massive restructuring.</p>
+        <div class="source">The Verge</div>
+    </div>
 
-    <article class="news-card">
-        <h2>AMD Linux Patch Boosts Steam Deck Performance</h2>
-        <p>A new efficiency-focused patch for Linux provides a significant 32% jump in "1% low" frame rates for low-end gaming titles on the Steam Deck.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">iPhone 18 Pro to Debut Custom Apple Cellular Modems</div>
+        <p class="summary">Apple is reportedly ready to ditch Qualcomm in favor of its own in-house 'C2' cellular solution, expected to launch with the flagship iPhone 18 lineup.</p>
+        <div class="source">9to5Mac</div>
+    </div>
 
-    <article class="news-card">
-        <h2>Keychron Announces Open-Source Mouse Firmware</h2>
-        <p>Peripheral maker Keychron is launching "ZGM," an open-source firmware for gaming mice similar to the popular QMK/ZMK standards for mechanical keyboards.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">Pixel 11 Pro Fold Leaks Showcase Sleek Redesign</div>
+        <p class="summary">Marketing renders have revealed the full design of Google's next foldable, featuring a thinner profile alongside the upcoming Pixel Watch and Buds refresh.</p>
+        <div class="source">The Verge</div>
+    </div>
 
-    <article class="news-card">
-        <h2>Valve Releases Steam Machine CAD Files</h2>
-        <p>In a major win for the DIY community, Valve has released the CAD design files for the Steam Machine’s exterior under a Creative Commons license.</p>
-    </article>
-
-    <article class="news-card">
-        <h2>Samsung Galaxy Z Fold 8 Pre-Orders Begin</h2>
-        <p>The latest foldable flagship from Samsung has hit the market, with retailers offering aggressive trade-in bonuses and massive gift card incentives.</p>
-    </article>
+    <div class="article-card">
+        <div class="headline">Bethesda Unveils Retro-Style 40th Anniversary Logo</div>
+        <p class="summary">The studio's new branding pays homage to its origins in the 1980s, specifically referencing the design language of its early Terminator titles.</p>
+        <div class="source">IGN</div>
+    </div>
 
     <footer>
-        &copy; 2026 Daily Tech Digest. Compiled by the AI News Desk.
+        &copy; 2026 Tech Digest Newsroom • Curated for the modern innovator.
     </footer>
 </div>
 
