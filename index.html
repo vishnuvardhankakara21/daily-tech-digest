@@ -14,152 +14,134 @@
             --border: #30363d;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 2rem 1rem;
         }
 
         .container {
-            max-width: 800px;
-            width: 90%;
-            padding: 40px 0;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
         }
 
-        header h1 {
+        h1 {
             font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
         .date {
-            color: var(--accent);
-            font-weight: 600;
+            color: var(--text-muted);
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 2px;
             font-size: 0.9rem;
+            letter-spacing: 0.1em;
         }
 
         .article-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 30px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease;
         }
 
         .article-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
         }
 
-        .headline {
+        h2 {
+            font-size: 1.25rem;
             color: var(--accent);
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 12px;
+            margin-bottom: 0.75rem;
             line-height: 1.3;
-            text-decoration: none;
-            display: block;
         }
 
-        .summary {
-            font-size: 1.05rem;
+        p {
+            font-size: 1rem;
             color: var(--text-main);
-            margin: 0;
-        }
-
-        .source {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 15px;
-            text-transform: uppercase;
-            font-weight: bold;
         }
 
         footer {
-            margin-top: 40px;
-            padding-bottom: 60px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
             text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
-            .headline { font-size: 1.2rem; }
+            h1 { font-size: 1.8rem; }
+            body { padding: 1rem; }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Daily Tech Digest</h1>
+            <div class="date">July 31, 2026</div>
+        </header>
 
-<div class="container">
-    <header>
-        <div class="date">Friday, July 31, 2026</div>
-        <h1>Daily Tech Digest</h1>
-    </header>
+        <main>
+            <div class="article-card">
+                <h2>Apple May Charge for Advanced AI Siri Features</h2>
+                <p>CEO Tim Cook hinted that high-end "Apple Intelligence" features may eventually require an iCloud+ subscription to cover rising compute costs.</p>
+            </div>
 
-    <div class="article-card">
-        <div class="headline">Nintendo Adds 'Super Mario Sunshine' to Switch 2 Library</div>
-        <p class="summary">The GameCube classic is officially joining the 'Nintendo Classics' service on August 13th, further expanding the backward compatibility options for the next-gen console.</p>
-        <div class="source">Nintendo Life</div>
+            <div class="article-card">
+                <h2>Google Pulls AI Image Tool After One Day</h2>
+                <p>Google Earth's new AI image editing tool was removed almost immediately after users began creating realistic deepfakes of disaster zones and refugees.</p>
+            </div>
+
+            <div class="article-card">
+                <h2>The Era of Affordable Gaming Is Ending</h2>
+                <p>Industry reports suggest that $500 consoles and budget GPUs are becoming relics of the past as production costs and the AI arms race drive hardware prices up.</p>
+            </div>
+
+            <div class="article-card">
+                <h2>Leak Reveals "Google Pixel Tag" Item Tracker</h2>
+                <p>New leaked images confirm Google is readying its own hardware tracker to compete directly with Apple's AirTag and Samsung's SmartTag ecosystem.</p>
+            </div>
+
+            <div class="article-card">
+                <h2>"Antizuck" App Tops iOS Charts</h2>
+                <p>Privacy concerns regarding Meta’s smart glasses have propelled a new app to the top of the App Store, which claims to alert users when AI-enabled glasses are nearby.</p>
+            </div>
+
+            <div class="article-card">
+                <h2>Ubisoft Sunsets NFT Strategy Game</h2>
+                <p>Ubisoft has announced the closure of "Champions Tactics," marking the end of its high-profile experiment with Web3 and blockchain gaming.</p>
+            </div>
+
+            <div class="article-card">
+                <h2>Android 17 QPR1 Beta 8 Hits Pixel Devices</h2>
+                <p>Google continues its rapid software iteration, rolling out the latest beta update for Pixel users with a focus on stability and system refinements.</p>
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2026 Daily Tech Digest • Curated for the modern innovator.
+        </footer>
     </div>
-
-    <div class="article-card">
-        <div class="headline">Tim Cook Labels Hybrid AI as Apple’s 'Competitive Weapon'</div>
-        <p class="summary">In his final earnings call as CEO, Cook detailed a strategy to monetize Apple Intelligence through iCloud, positioning proprietary hardware-software integration as a major market advantage.</p>
-        <div class="source">CNBC</div>
-    </div>
-
-    <div class="article-card">
-        <div class="headline">Google Credits AI for 200% Increase in Chrome Bug Fixes</div>
-        <p class="summary">Internal LLM tools have allowed Google to patch more security vulnerabilities in the last month than in the previous two years combined, marking a shift in automated cybersecurity.</p>
-        <div class="source">TechCrunch</div>
-    </div>
-
-    <div class="article-card">
-        <div class="headline">Xbox Sets One-Year Deadline for Growth Recovery</div>
-        <p class="summary">CEO Asha Sharma issued a staff memo targeting June 2027 as the deadline to return the gaming division to consistent revenue and player growth following a massive restructuring.</p>
-        <div class="source">The Verge</div>
-    </div>
-
-    <div class="article-card">
-        <div class="headline">iPhone 18 Pro to Debut Custom Apple Cellular Modems</div>
-        <p class="summary">Apple is reportedly ready to ditch Qualcomm in favor of its own in-house 'C2' cellular solution, expected to launch with the flagship iPhone 18 lineup.</p>
-        <div class="source">9to5Mac</div>
-    </div>
-
-    <div class="article-card">
-        <div class="headline">Pixel 11 Pro Fold Leaks Showcase Sleek Redesign</div>
-        <p class="summary">Marketing renders have revealed the full design of Google's next foldable, featuring a thinner profile alongside the upcoming Pixel Watch and Buds refresh.</p>
-        <div class="source">The Verge</div>
-    </div>
-
-    <div class="article-card">
-        <div class="headline">Bethesda Unveils Retro-Style 40th Anniversary Logo</div>
-        <p class="summary">The studio's new branding pays homage to its origins in the 1980s, specifically referencing the design language of its early Terminator titles.</p>
-        <div class="source">IGN</div>
-    </div>
-
-    <footer>
-        &copy; 2026 Tech Digest Newsroom • Curated for the modern innovator.
-    </footer>
-</div>
-
 </body>
 </html>
